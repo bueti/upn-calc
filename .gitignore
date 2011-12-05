@@ -1,1 +1,5 @@
 *.swp
+*.o
+*.lib
+a.out
+upn_calc
