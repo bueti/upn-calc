@@ -19,7 +19,7 @@ int main() {
          * ein Newline ist.
         */
 
-        do { sscanf(c, "%d", &i); } while (!strcmp(gets(c), "\n"));
+        do { gets(c); sscanf(c, "%d", &i); } while (!strcmp(c, "\n"));
 
         /**
          * Nimm 'c' und vergleiche mit den Operatoren. Falls c kein
