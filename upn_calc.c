@@ -27,22 +27,25 @@ int main() {
          * Falls nicht, hole jede Zahl aus dem Stack und "operatore" sie zu d
          * Gib d als Resultat aus
         */
+        // FIXME: Der Stack wird nicht wirklich resetet... O_o
         if(strcmp(c, "+") == 0) {
-            do {
-            printf("peek im + loop: %d\n", peek());
-              if (pop() == '\0') {
-                printf("Resultat: %d\n", e);
-                break;
-              }
-              printf("e vor pop: %d\n",e);
+          while(peek() != 0) {
               e += pop();
-              printf("e nach pop: %d\n",e);
-            } while (1);
+          }
+          printf("Resultat: %d\n", e);
+          push(e);
+          e = 0;
         }
 
-        /* FIXME: Hier fehlt noch die richtige Logik, erstmals die Addition...
-        if(strcmp(c, "-") == 0)
-            printf("Resultat: %d\n", pop() - pop());
+        /* TODO: Hier fehlt noch die richtige Logik, erstmals die Addition...
+        if(strcmp(c, "-") == 0) {
+          while(peek() != 0) {
+              e -= pop();
+          }
+          printf("Resultat: %d\n", e);
+          push(e);
+          e = 0;
+        }
 
         if(strcmp(c, "*") == 0)
             printf("Resultat: %d\n", pop() * pop());
