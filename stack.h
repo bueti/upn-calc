@@ -1,4 +1,4 @@
-#define STACKSIZE 10
+#define STACKSIZE 100
 
 struct c_stack {
   char data[STACKSIZE];
