@@ -29,7 +29,6 @@ int main() {
          * Falls nicht, hole jede Zahl aus dem Stack und "operatore" sie zu d
          * Gib d als Resultat aus
         */
-        // FIXME: Der Stack wird nicht wirklich resetet... O_o
         if(strcmp(c, "+") == 0) {
           while(peek() != 0)
               e += pop();
