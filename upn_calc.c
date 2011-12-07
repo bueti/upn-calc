@@ -7,6 +7,7 @@ int main() {
     char c[100];  // Character Arrray (String) für Operator
     int i = 0;    // Int für den Stack
     int e = 0;    // Zum Rechnen
+	int done = 0; // Um den push zu kontrollieren
 
     printf("(quit to exit)\n");
 
@@ -20,6 +21,7 @@ int main() {
         */
 
         do { gets(c); sscanf(c, "%d", &i); } while (!strcmp(c, "\n"));
+        done = 0;
 
         /**
          * Nimm 'c' und vergleiche mit den Operatoren. Falls c kein
@@ -35,16 +37,20 @@ int main() {
           printf("Resultat: %d\n", e);
           push(e);
           e = 0;
+		  done = 1;
         }
 
-        /* TODO: Hier fehlt noch die richtige Logik, erstmals die Addition...
+        /* TODO: Hier fehlt noch die richtige Logik
         if(strcmp(c, "-") == 0) {
           while(peek() != 0) {
-              e -= pop();
+			printf("e vor -: %d\n", e);
+            e -= pop();
+			printf("e nach -: %d\n", e);
           }
           printf("Resultat: %d\n", e);
           push(e);
           e = 0;
+          done = 1;
         }
 
         if(strcmp(c, "*") == 0)
@@ -57,6 +63,8 @@ int main() {
         if(strcmp(c, "quit") == 0)
             return 0;
 
-        push(i);
-    }
+		/* Push die neue Zahl nur wenn kein Operator anlag */
+		if(done != 1)
+        	push(i);
+	}	
 }
