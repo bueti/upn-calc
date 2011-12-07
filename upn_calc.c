@@ -7,7 +7,7 @@ int main() {
     char c[100];  // Character Arrray (String) für Operator
     int i = 0;    // Int für den Stack
     int e = 0;    // Zum Rechnen
-	int done = 0; // Um den push zu kontrollieren
+    int done = 0; // Um den push zu kontrollieren
 
     printf("(quit to exit)\n");
 
@@ -34,7 +34,7 @@ int main() {
               e += pop();
 
           printf("Resultat: %d\n", e);
-		  done = 1;
+          done = 1;
         }
 
         if(strcmp(c, "-") == 0) {
@@ -45,28 +45,28 @@ int main() {
           done = 1;
         }
         
-		
+    
         if(strcmp(c, "*") == 0) {
-			while(peek() != 0)
-				e *= pop();
-				
-            printf("Resultat: %d\n", e);
-			done = 1;
-		}
+           while(peek() != 0)
+              e *= pop();
+        
+          printf("Resultat: %d\n", e);
+          done = 1;
+        }
 
         if(strcmp(c, "/") == 0) {
-			while(peek() != 0)
-				e /= pop();
-				
-            printf("Resultat: %d\n", e);
-			done = 1;
-	 	}
-	
+          while(peek() != 0)
+            e /= pop();
+        
+          printf("Resultat: %d\n", e);
+          done = 1;
+        }
+  
         if(strcmp(c, "quit") == 0)
-            return 0;
+          return 0;
 
-		/* Push die neue Zahl nur wenn kein Operator anlag */
-		if(done != 1)
-        	push(i);
-	}	
+        /* Push die neue Zahl nur wenn kein Operator anlag */
+        if(done != 1)
+          push(i);
+    } 
 }
