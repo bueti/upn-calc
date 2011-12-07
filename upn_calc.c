@@ -54,11 +54,14 @@ int main() {
 			done = 1;
 		}
 
-		/* TODO: Hier fehlt noch die richtige Logik
-        if(strcmp(c, "/") == 0)
-            printf("Resultat: %d\n", pop() / pop());
-        */
-
+        if(strcmp(c, "/") == 0) {
+			while(peek() != 0)
+				e /= pop();
+				
+            printf("Resultat: %d\n", e);
+			done = 1;
+	 	}
+	
         if(strcmp(c, "quit") == 0)
             return 0;
 
