@@ -31,31 +31,25 @@ int main() {
         */
         // FIXME: Der Stack wird nicht wirklich resetet... O_o
         if(strcmp(c, "+") == 0) {
-          while(peek() != 0) {
+          while(peek() != 0)
               e += pop();
-          }
+
           printf("Resultat: %d\n", e);
-          push(e);
-          e = 0;
 		  done = 1;
         }
 
-        /* TODO: Hier fehlt noch die richtige Logik
         if(strcmp(c, "-") == 0) {
-          while(peek() != 0) {
-			printf("e vor -: %d\n", e);
+          while(peek() != 0)
             e -= pop();
-			printf("e nach -: %d\n", e);
-          }
+          
           printf("Resultat: %d\n", e);
-          push(e);
-          e = 0;
           done = 1;
         }
-
+        
+		/* TODO: Hier fehlt noch die richtige Logik
         if(strcmp(c, "*") == 0)
             printf("Resultat: %d\n", pop() * pop());
-
+		
         if(strcmp(c, "/") == 0)
             printf("Resultat: %d\n", pop() / pop());
         */
